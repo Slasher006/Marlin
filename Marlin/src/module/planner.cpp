@@ -2165,9 +2165,9 @@ bool Planner::_populate_block(
 
     /**
      * At this point at least one of the axes has more steps than
-     * MIN_STEPS_PER_SEGMENT, ensuring the segment won't get dropped as
-     * zero-length. It's important to not apply corrections
-     * to blocks that would get dropped!
+     * MIN_STEPS_PER_SEGMENT, ensuring the segment won't get dropped
+     * as zero-length. It's important to not apply corrections to blocks
+     * that would get dropped!
      *
      * A correction function is permitted to add steps to an axis, it
      * should *never* remove steps!
@@ -2199,7 +2199,11 @@ bool Planner::_populate_block(
   E_TERN_(block->extruder = extruder);
 
   #if ENABLED(AUTO_POWER_CONTROL)
+<<<<<<< HEAD
     if (NUM_AXIS_GANG(
+=======
+    if (LINEAR_AXIS_GANG(
+>>>>>>> 15ca479708 (🎨 Fix comments, formatting)
          block->steps.x, || block->steps.y, || block->steps.z,
       || block->steps.i, || block->steps.j, || block->steps.k
     )) powerManager.power_on();
